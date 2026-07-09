@@ -43,7 +43,7 @@ const updateJob = async (req, res) => {
   const job = await Job.findOneAndUpdate(
     { createdBy: userId, _id: jobId },
     req.body,
-    { runValidators: true, new: true },
+    { runValidators: true, returnDocument: 'after' },
   );
 
   if (!job) {
