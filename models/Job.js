@@ -4,17 +4,17 @@ const mongoose = require('mongoose');
 const JobSchema = new mongoose.Schema(
   {
     company: {
-      type: string,
+      type: String,
       required: [true, 'Please provide company'],
       maxlenght: 50,
     },
     position: {
-      type: string,
+      type: String,
       required: [true, 'Please provide position'],
       maxlenght: 100,
     },
     status: {
-      type: string,
+      type: String,
       enum: ['interview', 'decline', 'pending'],
       default: 'pending',
     },
