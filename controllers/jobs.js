@@ -15,8 +15,13 @@ const getAllJobs = async (req, res) => {
   res.status(StatusCodes.OK).json({ jobs, count: jobs.length });
 };
 
-const getSingleJob = (req, res) => {
-  res.send('Get Single Job');
+const getSingleJob = async (req, res) => {
+  const {
+    user: { userId },
+    params: { id: jobId },
+  } = req;
+  if (!job) {
+    throw new NotFound(`No job found with id: ${jobId}`);
 };
 
 const updateJob = (req, res) => {
